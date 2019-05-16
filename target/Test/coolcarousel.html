@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+		<meta name="description" value="A basic image swapping slideshow example that will swap the lare image onmouseover of one of the thumbnails by creating a carousel with the fx-option set to none." />
+		<meta name="keywords" value="slideshow, example, thumbnails, jquery, swapimage, imageswap, mouseover, mouseenter" />
+		<title>Basic slideshow changing the large image on mouse-over of a thumbnail</title>
+
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	  
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.easing.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/wow.js"></script>
+		<script src="js/custom.js"></script>
+		<script src="contactform/contactform.js"></script>
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+		<script src="jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#carousel').carouFredSel({
+					items: 1,
+					auto: false,
+					scroll: {
+						fx: 'none'
+					},
+					pagination: {
+						container: '#pager',
+						event: 'mouseenter',
+						anchorBuilder: function(nr) {
+							var src = $(this).attr('src').replace('/large/', '/small/');
+							return '<img src="'+ src +'" border="0" />';
+						}
+					}
+				});
+			});
+		</script>
+		<style type="text/css">
+			html, body {
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				min-height: 600px;
+			}
+			body * {
+				font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+				font-size: 14px;
+				color: #333;
+				line-height: 22px;
+			}
+
+			#wrapper {
+				width: 700px;
+				height: 400px;
+				margin: -200px 0 0 -350px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+			}
+			#carousel {
+				width: 600px;
+				height: 400px;
+				overflow: hidden;
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+			}
+			#carousel img {
+				display: block;
+			}
+			#pager {
+				width: 110px;
+				overflow: hidden;
+				position: absolute;
+				z-index: 2;
+				bottom: -10px;
+				right: 0;
+			}
+			#pager img {
+				display: block;
+				float: left;
+
+				width: 70px;
+				height: 70px;
+				padding: 10px 5px 10px 30px;
+				
+				opacity: 0.7;
+			}
+			#pager img.selected {
+				background: url(img/thumb-selected.png) 0 0 no-repeat transparent;
+				width: 80px;
+				height: 80px;
+				padding: 10px 10px 10px 20px;
+				
+				opacity: 1;
+			}
+			
+		</style>
+	</head>
+	<body>
+
+
+  <!--header-->
+  <header class="main-header" id="header">
+		<div class="bg-color">
+		  <!--nav-->
+		  <nav class="nav navbar-default navbar-fixed-top">
+			<div class="container">
+			  <div class="col-md-12">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
+								<span class="fa fa-bars"></span>
+							</button>
+				  <a href="index.html" class="navbar-brand">Spatial Designs</a>
+				</div>
+				<div class="collapse navbar-collapse navbar-right" id="mynavbar">
+				  <ul class="nav navbar-nav">
+					<li class="active"><a href="#header">Home</a></li>
+					<li><a href="#">Projects</a></li>
+					<li><a href="#">Client</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+		  </nav>
+		  
+
+		  <div id="wrapper">
+				<div id="carousel">
+					<img src="img/large/IMG1.png" alt="IMG1" width="600" height="400" border="0" />
+					<img src="img/large/IMG2.png" alt="IMG2" width="600" height="400" border="0" />
+					<img src="img/large/IMG3.png" alt="IMG3" width="600" height="400" border="0" />
+					<img src="img/large/IMG4.png" alt="IMG4" width="600" height="400" border="0" />
+				</div>
+				<div id="pager"></div>
+			</div>	
+		  <!--/ nav-->
+		  <!-- <div class="container text-center">
+			<div class="wrapper wow fadeInUp delay-05s">
+			  <h2 class="top-title">Web Design & Development</h2>
+			  <h3 class="title">Bethany</h3>
+			  <h4 class="sub-title">We Create amazing designs</h4>
+			  <button type="submit" class="btn btn-submit">Download Now</button>
+			</div>
+		  </div> -->
+		</div>
+	  </header>
+	  <!--/ header-->
+	  <!---->
+	  <!---->
+	  <!---->
+	  <footer class="" id="footer">
+		<div class="container">
+		  <div class="row">
+			<div class="col-sm-7 footer-copyright">
+			  © Farintsol Theme - All rights reserved
+			</div>
+			<div class="col-sm-5 footer-social">
+			  <div class="pull-right hidden-xs hidden-sm">
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-dribbble"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-google-plus"></i></a>
+				<a href="#"><i class="fa fa-pinterest"></i></a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+	  <!---->
+	  <!--contact ends-->
+	  <script src="js/jquery.min.js"></script>
+	  <script src="js/jquery.easing.min.js"></script>
+	  <script src="js/bootstrap.min.js"></script>
+	  <script src="js/wow.js"></script>
+	  <script src="js/custom.js"></script>
+	  <script src="contactform/contactform.js"></script>
+	
+
+	</body>
+</html>
